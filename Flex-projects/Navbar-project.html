@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+   <style>
+
+        html {
+            font-family: 'Oxygen', sans-serif;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        .navbar {
+            background: midnightblue;
+        }
+
+        .navbar div {
+            display: none;
+        }
+
+        .navbar .toggle,
+        .navbar .brand {
+            display: inline-block;
+        }
+
+        .navbar .link {
+            display: block;
+            text-align: center;
+            padding: 1em;
+            text-decoration: none;
+            background: rgb(31, 31, 156);
+            color: red;
+        }
+
+        .navbar .link:hover,
+        .navbar .link:active {
+            color:  rgb(31, 31, 156);
+            background: whitesmoke;
+        }
+
+        .navbar .brand {
+            width: 10em;
+            text-align: center;
+            padding: 1em;
+            color: gray;
+        }
+
+        .navbar a {
+            text-decoration: none;
+        }
+
+        .navbar .toggle {
+            padding: 1em;
+            color: black;
+        }
+
+        @media (min-width: 48em) {
+            .navbar {
+                display: flex;
+            }
+
+            .navbar div {
+                display: flex;
+            }
+    
+            .navbar .left,
+            .navbar .right {
+                display: flex;
+                flex: 1;
+            }
+
+            .navbar .link {
+                width: auto;
+            }
+
+            .navbar .right {
+                justify-content: flex-end;
+            }
+
+            .navbar .toggle {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 48em) {
+            .navbar div {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 48em) {
+            .navbar.active .toggle {
+                background: rgb(13, 46, 194);
+                color: whitesmoke;
+            }
+
+            .navbar .brand {
+                text-align: left;
+            }
+
+            .navbar.active div {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="toggle" id="navHamburger">
+            <i class="fas fa-bars"></i>
+        </a>
+        <a href="#" class="brand">Freedom</a>
+
+        <div class="left">
+            <a href="#" class="link">Link 1</a>
+            <a href="#" class="link">Link 2</a>
+        </div>
+
+
+        <div class="right">
+            <a href="#" class="link">Link 3</a>
+        </div>
+    </div>
+</body>
+
+<script>
+    const navHamburger = document.querySelector('#navHamburger');
+    navHamburger.addEventListener('click', (e) => {
+     navHamburger.parentElement.classList.toggle('active');
+    })
+</script>
+</html>
